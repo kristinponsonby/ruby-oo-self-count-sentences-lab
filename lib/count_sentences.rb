@@ -1,20 +1,40 @@
-require 'pry'
-
+require "pry"
 class String
 
   def sentence?
-    
+    if self.end_with?(".")
+      true
+    else
+      false
+     end
   end
 
   def question?
-
+    if self.end_with?("?")
+      true
+    else
+      false
+    end
   end
 
   def exclamation?
-
+    if self.end_with?("!")
+      true
+      else
+        false
+    end
   end
-
+#[one. two. three?]
   def count_sentences
-
+   array = self.split(" ")
+   array.count do |string|
+     if string.end_with?(".") || string.end_with?("!") || string.end_with?("?")
+       true
+     else
+       false
+     end
+  end 
+  
   end
+  #binding.pry
 end
